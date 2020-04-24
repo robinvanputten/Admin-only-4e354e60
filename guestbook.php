@@ -64,7 +64,7 @@ try {
     } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
         $text = $_POST['text'];
-        $admin = isset($_POST['admin']) ? 1 : 0;
+        $admin = userIsAdmin($conn) ? 1 : 0;
         if (userIsAdmin($conn)) {
             $color = $_POST['color'];
         } else {
